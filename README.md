@@ -2,5 +2,5 @@
 ## Paveicamie darbi
 - [ ] uztaisi pabeigu readme
 - [ ] sagatavo macibu  materialu
-- [ ] uztaisi teorijas zinasanu testu 
+- [x] uztaisi teorijas zinasanu testu 
 - [ ] uztaisi uzdevumu programmas 
