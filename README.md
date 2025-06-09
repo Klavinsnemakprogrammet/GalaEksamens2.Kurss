@@ -1,6 +1,7 @@
 # GalaEksamens2.Kurss
 ## Paveicamie darbi
 - [ ] uztaisi pabeigu readme
-- [ ] sagatavo macibu  materialu
+- [x] sagatavo macibu  materialu
 - [x] uztaisi teorijas zinasanu testu 
-- [ ] uztaisi uzdevumu programmas 
+- [x] uztaisi uzdevumu programmas 
+- [ ] uztaisi prezentāciju priekš prezentēšanas
