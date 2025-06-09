@@ -1,7 +1,2 @@
-# GalaEksamens2.Kurss
-## Paveicamie darbi
-- [ ] uztaisi pabeigu readme
-- [x] sagatavo macibu  materialu
-- [x] uztaisi teorijas zinasanu testu 
-- [x] uztaisi uzdevumu programmas 
-- [ ] uztaisi prezentāciju priekš prezentēšanas
+# Gala eksāmens 2. kursā
+### Šī reposetorija satur mācību materiālu powerpoint formātā kurā ir informācija par python funkcijām un 3 uzdevumus par tēmu.
