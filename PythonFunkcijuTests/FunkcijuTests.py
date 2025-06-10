@@ -2,16 +2,18 @@
 # atsauce: liela daļa no jautājumiem ņemti no https://www.w3schools.com/python/python_functions.asp
 import tkinter as tk
 import random
+import sys 
+import os
 
 #---------------------------------- viktorīnas dati --------------------------------#
 jautajumi = [
     "KĀ PAREIZI IZVEIDOT FUNKCIJU PYTHON VALODĀ?",
-    "KĀ VAR IZSAUKT ŠO FUNKCIJU?\n \n def function():\n print(""'Hello World!'"")",
+    "KĀ VAR IZSAUKT ŠO FUNKCIJU?\n \n def funkcija():\n print(""'Hello World!'"")",
     "KO IZVADĪS PROGRAMMA? \n\n def reizreikins(x): \n return x * 2\n print(reizreikins(5))",
     "KO IZDOS ŠĪ PROGRAMMA? \n\n def funkcija(x):""\n print(x)""\n my_function(x = 1)",
     "KAS IR JĀIEVADA LAI FUNKCIJAS REZULTĀTS BŪTU 6?""\n\n def reizrekins(a, b):\nreturn a * b",
     "KAS TIKS IZDOTS PĒC ŠI KODA IZPILDES? \n\n def majas(valsts = ""'Norvēģja'""):\n  print(""Manas mājas ir "" + valsts)\n majas(""'Latvija'"")",
-    "KĀ VAR IZSAUKT ŠO FUNKVIJU \n \n def HelloWorld():\n print(""'Hello World!'"")",
+    "KĀ VAR IZSAUKT ŠO FUNKCIJU \n \n def HelloWorld():\n print(""'Hello World!'"")",
     "KO DARA COMMANDA 'PASS' ŠAJĀ KODĀ? \n\n def mana_funkcija():\n pass",
     "KO IZVADĪS ŠIS KODS? def funkcija(ediens):\n  for x in ediens:\n augli = ['ābols', 'banāns', 'apelsīns']\n funkcija(augli)",
     "KO IZVADĪS ŠIS KODS? \n\n def matematika(a, b, /, *, c, d):\n print(a + b + c + d)\n matematika(5, 6, c = 7, d = 8)",
@@ -82,7 +84,8 @@ atbildes = [
     "26",
     
 ]
-seciba = [0,1,2,3,4,5,6,7,8,9,10]
+seciba = [0,1,2,3,4,5,6,7,8,9]
+random.shuffle(seciba)
 piemers = 0
 punkti = 0
 
@@ -90,8 +93,19 @@ punkti = 0
 # funkcija, lai aizvērtu visus logus
 def close_all_windows():
     root.destroy()
+    
 
 # funkcija, lai parādītu jautājumu skatu
+def resource_path(relative_path):   #funkcija lai salabotu error kad exportē uz .exe
+    
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+
+
 def funkSAKT():
     sakuma_skats.pack_forget()  # Aizver sākuma skatu
     jautajumu_skats.pack(fill='both', expand=True)  # Atver jautājumu skatu
@@ -145,7 +159,7 @@ def funkJAUTAJUMS():
         rezultats.config(text=f"{punkti} punkti")
     piemers += 1
     if piemers < 10:
-        jautNr.config(text=f'{piemers}. no 10 jautājumiem')
+        jautNr.config(text=f'{piemers+1}. no 10 jautājumiem')
         jautajums.config(text=jautajumi[seciba[piemers]])
         atbilde1.config(text=atbildes1[seciba[piemers]])
         atbilde2.config(text=atbildes2[seciba[piemers]])
@@ -165,13 +179,15 @@ def funkJAUTAJUMS():
         elif punkti>1:
             txt = f"Nu līdz 2niekam daudz nevajag!\nDiemžēl liela daļa tavu atbilžu bija nepareizas. ({punkti} punkti)"
         elif punkti>0:
-            txt = f"Nu līdz 2niekam daudz nevajag!\nKā var pat 1 punktu neiegūt? ({punkti} punkts)"
+            txt = f"Nu līdz 2niekam daudz nevajag!\nKā var pat 2 punkts neiegūt? ({punkti} punkts)"
         else:
             txt = f"Nu līdz 2niekam daudz nevajag!\nDiemžēl tavas atbildes bija nepareizas. ({punkti} punkti)"
         rezult.config(pady = 20, text=txt, font=('Verdana', 14), fg="#FFFFFF", bg="#3F3F3F")
 
 def restart():
-    global piemers, punkti
+    global piemers, punkti, seciba
+    seciba = [0,1,2,3,4,5,6,7,8,9]
+    random.shuffle(seciba)
     piemers = 0
     punkti = 0
     rezult.config(text="rezultats", font=('Verdana', 14), fg="white", bg="#3F3F3F")
@@ -183,14 +199,16 @@ def restart():
     atbilde2.config(text=atbildes2[seciba[piemers]])
     atbilde3.config(text=atbildes3[seciba[piemers]])
     atbilde4.config(text=atbildes4[seciba[piemers]])
-    jautajumu_skats.pack(fill='both', expand=True)
+    sakuma_skats.pack(fill='both', expand=True)
 
 #--------------------------------- programmas logs ------------------------------#
 root = tk.Tk()
 root.title("Python Funkciju Tests")
 root.geometry("1000x1000")  
-root.resizable(True, True) #var mainit logu izmērus
+root.resizable(True, True)
 root.configure(bg="#3F3F3F")
+
+image = tk.PhotoImage(file=resource_path("pythonlogo.png"))
 
 #--------------------------------- sākuma skats ---------------------------------#
 sakuma_skats = tk.Frame(root, bg="#3F3F3F")
