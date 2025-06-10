@@ -17,3 +17,15 @@ Loga apakšā ir "Sākt no jauna" poga, ja nu vēlies atkārtot testu
 ![image](https://github.com/user-attachments/assets/8069a55b-2047-4283-996b-69babc5a67c7)
 
 
+## Atsauces
+W3Schools. “Python Functions.” W3Schools. Piekļūts 2025. gada 9. jūnijā. https://www.w3schools.com/python/python_functions.asp.
+
+GeeksforGeeks. “Python Functions.” GeeksforGeeks. Piekļūts 2025. gada 9. jūnijā. https://www.geeksforgeeks.org/python-functions/.
+
+Python Software Foundation. “Built-in Functions.” Python 3 dokumentācija. Piekļūts 2025. gada 9. jūnijā. https://docs.python.org/3/library/functions.html.
+
+AdPyke. “CodeSnap.” Visual Studio Marketplace. Piekļūts 2025. gada 9. jūnijā. https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap.
+
+OpenAI. “ChatGPT.” ChatGPT. Piekļūts 2025. gada 9. jūnijā. https://chatgpt.com/?model=auto.
+
+
